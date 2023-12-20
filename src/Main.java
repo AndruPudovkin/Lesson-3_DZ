@@ -44,10 +44,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         User user = parsing(scanner.nextLine());
-//        System.out.println(user.getDate());
-//        System.out.println(user.getGender());
-//        System.out.println(user.getPhoneNumder());
+        System.out.println(user.getDate());
+        System.out.println(user.getGender());
+        System.out.println(user.getPhoneNumder());
         System.out.println(user.getFio());
+//-------------------------------------------------------------------------------------
+                // Добавить Conroller  и обработку ошибок
+//-------------------------------------------------------------------------------------
 
 
 
