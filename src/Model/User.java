@@ -21,11 +21,17 @@ public class User {
     }
 
     public void setDate(LocalDate date) {
+
         this.date = date;
     }
 
+
     public int getPhoneNumder() {
         return phoneNumder;
+    }
+    public String getPhoneNumderToString() {
+        String s = phoneNumder.toString();
+        return s;
     }
 
     public void setPhoneNumder(int phoneNumder) {
@@ -39,4 +45,6 @@ public class User {
     public void setGender(char gender) {
         this.gender = gender;
     }
+
+
 }

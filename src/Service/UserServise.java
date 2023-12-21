@@ -6,17 +6,16 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class UserServise {
-   private   User user;
-   private String scanerString;
 
-   public User getUserIsString(String scanerString){
+    public User getUserIsString(String scanerString){
+        User user = new User();
        String[] arrayString = scanerString.split(" ");
        StringBuilder stringBuilder = new StringBuilder();
 
        for (int i = 0; i < arrayString.length; i++) {
            if (arrayString[i].contains(".")){
-               DateTimeFormatter europeanDateFormatter = DateTimeFormatter.ofPattern(arrayString[i]);
-               LocalDate date = LocalDate.parse(arrayString[i], europeanDateFormatter); // оштбка даты нужна обработка
+               DateTimeFormatter europeanDateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+               LocalDate date = LocalDate.parse(arrayString[i], europeanDateFormatter);
                user.setDate(date);
            }
            else if (arrayString[i].equals("f") || arrayString[i].equals("m")) {
@@ -37,6 +36,7 @@ public class UserServise {
        return user;
 
        }
+
 
 
 }

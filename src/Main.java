@@ -1,5 +1,9 @@
 import Model.User;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Formattable;
@@ -44,12 +48,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         User user = parsing(scanner.nextLine());
-        System.out.println(user.getDate());
-        System.out.println(user.getGender());
-        System.out.println(user.getPhoneNumder());
-        System.out.println(user.getFio());
+//        System.out.println(user.getDate());
+//        System.out.println(user.getGender());
+//        System.out.println(user.getPhoneNumder());
+//        System.out.println(user.getFio());
+        userWrite(user);
 //-------------------------------------------------------------------------------------
-                // Добавить Conroller  и обработку ошибок
+                //   ДОБАСИТЬ ОБРАБОТКУ ОШИБОК !!!!
 //-------------------------------------------------------------------------------------
 
 
@@ -93,6 +98,24 @@ public class Main {
 
        return user;
 
+    }
+    public static void userWrite(User user){
+        String[] strings = user.getFio().split(" ");
+        String nameFile = strings[0];
+        try(FileWriter fileWriter = new FileWriter(nameFile, true)) {
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(user.getFio());
+            bufferedWriter.write(user.getDate().toString());
+            bufferedWriter.write(" ");
+            bufferedWriter.write(user.getPhoneNumderToString());
+            bufferedWriter.write(" ");
+            bufferedWriter.write(user.getGender());
+            bufferedWriter.write("\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+
+
+        }
     }
 
 
