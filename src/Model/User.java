@@ -3,10 +3,10 @@ package Model;
 import java.time.LocalDate;
 
 public class User {
-    private String fio;
+    private String fio ;
     private LocalDate date;
     private Integer phoneNumder;
-    private char gender;
+    private char gender ;
 
     public String getFio() {
         return fio;
@@ -26,7 +26,7 @@ public class User {
     }
 
 
-    public int getPhoneNumder() {
+    public Integer getPhoneNumder() {
         return phoneNumder;
     }
     public String getPhoneNumderToString() {
@@ -39,6 +39,7 @@ public class User {
     }
 
     public char getGender() {
+
         return gender;
     }
 
